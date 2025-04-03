@@ -21,7 +21,7 @@ function classNames(...classes: string[]) {
 
 export default function Navbar() {
   const pathname = usePathname()
-  const { user } = useAuth()
+  const { user, signOut } = useAuth()
 
   return (
     <Disclosure as="nav" className="bg-white shadow">
@@ -107,7 +107,7 @@ export default function Navbar() {
                       <Menu.Item>
                         {({ active }) => (
                           <button
-                            onClick={() => supabase.auth.signOut()}
+                            onClick={() => signOut()}
                             className={classNames(active ? 'bg-gray-100' : '', 'block w-full text-left px-4 py-2 text-sm text-gray-700')}
                           >
                             Sign out
@@ -187,7 +187,7 @@ export default function Navbar() {
                 </Disclosure.Button>
                 <Disclosure.Button
                   as="button"
-                  onClick={() => supabase.auth.signOut()}
+                  onClick={() => signOut()}
                   className="block w-full text-left px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
                 >
                   Sign out
