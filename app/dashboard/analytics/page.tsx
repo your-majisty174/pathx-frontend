@@ -54,6 +54,7 @@ const deliveryData = {
       label: 'Deliveries',
       data: [65, 59, 80, 81, 56, 55, 40],
       borderColor: '#3B82F6',
+      backgroundColor: '#3B82F6',
       tension: 0.4,
     },
   ],
